@@ -36,6 +36,7 @@ const Form = () => {
 //                 let openIssues = repo.open_issues;
 //                 let watchers = repo.watchers;
 //                 let language = repo.language;
+//                 let stargazers = repo.stargazers;
 //                 return {repoName, url, forks, openIssues, watchers, language};
 //                 });
 //                 setRepos(array);
