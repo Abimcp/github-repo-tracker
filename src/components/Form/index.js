@@ -4,8 +4,9 @@ import { useState } from "react";
 import axios from "axios";
 
 const Form = () => {
-  const [repo, setRepo] = useState("");
+  const [repo, setRepo] = useState([]);
   const [user, setUser] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,9 +21,25 @@ const Form = () => {
 
   const fetchRepos = async (user) => {
     try {
+      setError(null);
       const { data } = await axios.get(
         `https://api.github.com/users/${user}/repos`
       );
+      if (!data.length ) {
+                setError("Sorry, this user has no public repos");
+            }
+      } else { 
+//         const array = data.reverse().map(repo => {
+//                 let repoName = repo.name;
+//                 let url = repo.html_url;
+//                 let forks = repo.forks;
+//                 let openIssues = repo.open_issues;
+//                 let watchers = repo.watchers;
+//                 let language = repo.language;
+//                 return {repoName, url, forks, openIssues, watchers, language};
+//                 });
+//                 setRepos(array);
+//             }
       console.log(data);
       return data;
     } catch (err) {
