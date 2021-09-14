@@ -1,0 +1,37 @@
+{
+  "name": "github-repo-tracker",
+  "version": "1.0.0",
+  "description": "Your app should make use of React Your repo tracker should have an input for users to give their GitHub username After submitting their username, use the GitHub API to retrieve that user's list of repos When selecting a repo, a User should be shown some data about that repo eg. issue count, stargazers, forks etc. NB: This usage of the GitHub API does not require authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-cli serve --mode development --config config/webpack.config.dev.js",
+    "build": "webpack --config config/webpack.config.production.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abimcp/github-repo-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abimcp/github-repo-tracker/issues"
+  },
+  "homepage": "https://github.com/Abimcp/github-repo-tracker#readme",
+  "devDependencies": {
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5"
+  }
+}
