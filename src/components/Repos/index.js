@@ -1,4 +1,3 @@
-import { id } from "postcss-selector-parser";
 import React, { useContext } from "react";
 import { RepoCard } from "..";
 import { RepoContext } from "../../context/RepoContext";
