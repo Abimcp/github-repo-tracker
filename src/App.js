@@ -1,11 +1,16 @@
 import React from "react";
 import { Form } from "../src/components";
+import Repos from "./components/Repos";
+import { RepoContextProvider } from "./context/RepoContext";
 
 function App() {
   return (
-    <div id="app">
-      <Form />
-    </div>
+    <RepoContextProvider>
+      <div id="app">
+        <Form />
+        <Repos />
+      </div>
+    </RepoContextProvider>
   );
 }
 
