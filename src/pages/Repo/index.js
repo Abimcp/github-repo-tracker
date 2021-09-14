@@ -40,5 +40,6 @@ const Repo = () => {
             fetchRepos()
         }
     }, [username]);
+}
 
 export default Repo;
