@@ -42,4 +42,14 @@ const Repo = () => {
     }, [username]);
 }
 
+    const renderCards = data => data.map((repoEntry, i) => <RepoCard repoName={repoEntry.repoName} key={i} link={repoEntry.url} forks={repoEntry.forks} openIssues={repoEntry.openIssues} watchers={repoEntry.watchers}/>);
+
+    return (
+        <>
+        <Form updateUsername={updateUsername}/>
+        {error? <p id="error-msg">{error}</p>: renderCards(repos)}
+        </>
+    )
+}
+
 export default Repo;
