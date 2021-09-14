@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "./styles.css";
-import { useState } from "react";
 import axios from "axios";
+import { RepoContext } from "../../context/RepoContext";
 
 const Form = () => {
-  const [repo, setRepo] = useState([]);
   const [user, setUser] = useState("");
   const [error, setError] = useState(null);
+  const [repos, setRepos] = useContext(RepoContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchRepos(user);
-    setRepo("");
+    setUser("");
   };
 
   const updateInput = (e) => {
@@ -25,26 +25,24 @@ const Form = () => {
       const { data } = await axios.get(
         `https://api.github.com/users/${user}/repos`
       );
-      if (!data.length ) {
-                setError("Sorry, this user has no public repos");
-            }
-      } else { 
-//         const array = data.reverse().map(repo => {
-//                 let repoName = repo.name;
-//                 let url = repo.html_url;
-//                 let forks = repo.forks;
-//                 let openIssues = repo.open_issues;
-//                 let watchers = repo.watchers;
-//                 let language = repo.language;
-//                 return {repoName, url, forks, openIssues, watchers, language};
-//                 });
-//                 setRepos(array);
-//             }
-      console.log(data);
-      return data;
+      if (!data.length) {
+        setError("Sorry, this user has no public repos");
+      }
+      const array = data.reverse().map((repo) => {
+        let repoName = repo.name;
+        let url = repo.html_url;
+        let forks = repo.forks;
+        let openIssues = repo.open_issues;
+        let watchers = repo.watchers;
+        let language = repo.language;
+        return { repoName, url, forks, openIssues, watchers, language };
+      });
+      setRepos(array);
+      console.log(array);
     } catch (err) {
-      if (data.status === 404) {
-        throw Error("That's not a valid Username");
+      console.log(err);
+      if (data && data.status === 404) {
+        setError("That's not a valid Username");
       }
       throw new Error(err.message);
     }
