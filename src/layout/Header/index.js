@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
-import logo2 from "./img/logo2.png";
+import logo from "./img/logo.png";
 
 const Header = () => {
     return <>
-        <img src={logo2}/>
+        <img src={logo}/>
         <h1>Welcome to your Repositories</h1>
         </>
 }
