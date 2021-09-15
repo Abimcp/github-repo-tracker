@@ -22,39 +22,23 @@ Users can search for a Github Username and they receive a list of Repos from the
 To view the app visit: http://localhost:8080
 
 
-
 ## Change Log
 
-### 
+###  build/bundle.js, build/bundle.js.LICENSE.txt, build/index.html, package-lock.json, package.json, src/App.js, src/components/Form/index.js, src/components/Form/styles.css, src/components/index.js, src/index.js
 
-[x] 
+[x] Form submits working
 
-###
+### src/pages/Repo/index.js
 
-[x] 
+[x] Added render Cards for forms
 
-### 
+###  src/App.js, src/components/Form/index.js, src/components/NavBar/index.js,  src/components/RepoCard/index.js, src/components/Repos/index.js, src/context/RepoContext.js, src/index.js
 
-[x] 
+[x] Rendering Repo cards and info
 
-### 
+###  src/components/RepoCard/index.js, src/index.css, src/index.js, src/pages/Repo/index.js
 
-[x]
-
-### 
-
-[x] 
-
-### 
-
-[x] 
-
-### 
-
-[x] 
-
-### 
-[x] 
+[x] added languages on repocard
 
 # Technologies used
 
@@ -76,4 +60,5 @@ To view the app visit: http://localhost:8080
 ## Challenges
 
 - Connecting the API and the React components
+- Using useContext
 
