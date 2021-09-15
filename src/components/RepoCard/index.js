@@ -31,7 +31,6 @@ const RepoCard = ({
           </span>
           {stargazers}
         </p>
-        <p>Languages: {language}</p>
       </div>
     </div>
   );
