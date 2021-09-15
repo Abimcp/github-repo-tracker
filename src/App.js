@@ -1,28 +1,20 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-import { NavBar } from "./components";
-import { Welcome } from "./pages";
-import { About } from "./pages";
-import { Search } from "./pages";
+import { Form } from "../src/components";
+import Repos from "./components/Repos";
+import { RepoContextProvider } from "./context/RepoContext";
+import Header from "../src/layout/Header";
+import Footer from "../src/layout/Footer";
 
 function App() {
   return (
-    <div id="app">
-      <NavBar />
-      <main>
-        <Switch>
-          <Route exact path="/">
-            <Welcome />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-        </Switch>
-      </main>
-    </div>
+    <RepoContextProvider>
+      <div id="app">
+        <Header />
+        <Form />
+        <Repos />
+        <Footer />
+      </div>
+    </RepoContextProvider>
   );
 }
 
