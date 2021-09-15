@@ -26,7 +26,8 @@ const Repo = () => {
           let openIssues = repo.open_issues;
           let watchers = repo.watchers;
           let language = repo.language;
-          return { repoName, url, forks, openIssues, watchers, language };
+          let stargazers = repo.stargazers;
+          return { repoName, url, forks, openIssues, watchers, language, stargazers };
         });
         setRepos(array);
       }
@@ -52,6 +53,7 @@ const renderCards = (data) =>
       forks={repoEntry.forks}
       openIssues={repoEntry.openIssues}
       watchers={repoEntry.watchers}
+      stargazers={repoEntry.stargazers}
     />
   ));
 

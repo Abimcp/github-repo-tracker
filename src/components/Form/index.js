@@ -35,15 +35,9 @@ const Form = () => {
         let openIssues = repo.open_issues;
         let watchers = repo.watchers;
         let language = repo.language;
+        let stargazers = repo.stargazers_count;
+        return { repoName, url, forks, openIssues, watchers, language, stargazers };
 
-        return {
-          repoName,
-          url,
-          forks,
-          openIssues,
-          watchers,
-          language,
-        };
       });
       setRepos(array);
       console.log(array);
@@ -57,7 +51,7 @@ const Form = () => {
   };
 
   return (
-    <div className="search-wrapper">
+    <div id="search-wrapper">
       <form onSubmit={handleSubmit} aria-label="search">
         <input
           className="search-input"
@@ -65,9 +59,10 @@ const Form = () => {
           aria-label="Repo"
           value={user}
           name="user"
+          placeholder="Get Spying!"
           onChange={updateInput}
         />
-        <input type="submit" value="Search" />
+        <input className="search-btn" type="submit" value="Search" />
       </form>
     </div>
   );

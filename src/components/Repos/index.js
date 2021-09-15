@@ -14,6 +14,7 @@ const Repos = () => {
           forks={repo.forks}
           openIssues={repo.openIssues}
           watchers={repo.watchers}
+          stargazers={repo.stargazers}
         />
       ))}
     </>
