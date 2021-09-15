@@ -7,7 +7,6 @@ import ''
 const NavBar = () => {
     
     return (
-        <Header />
         <nav>
             <NavLink exact to="/" className="home-link">Home</NavLink>
             <NavLink to="/about" activeClassName="active">About</NavLink>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const RepoCard = ({ repoName, link, forks, openIssues, watchers }) => {
+const RepoCard = ({ repoName, link, forks, openIssues, watchers, stargazers }) => {
   return (
     <div id="card">
       <h1>
@@ -12,6 +12,7 @@ const RepoCard = ({ repoName, link, forks, openIssues, watchers }) => {
         <p>Forks: {forks}</p>
         <p>Open Issues: {openIssues}</p>
         <p>Watchers: {watchers}</p>
+        <p>Stargazers: {stargazers}</p>
       </div>
     </div>
   );

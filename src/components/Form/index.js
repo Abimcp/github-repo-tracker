@@ -34,6 +34,7 @@ const Form = () => {
         let forks = repo.forks;
         let openIssues = repo.open_issues;
         let watchers = repo.watchers;
+        let stargazers = repo.stargazers;
         let language = repo.language;
         return { repoName, url, forks, openIssues, watchers, language };
       });
