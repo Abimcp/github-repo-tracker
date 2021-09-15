@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import LanguageCard from "../../components/LanguageCard";
 
 const Repo = () => {
   const [repos, setRepos] = useState([]);
@@ -59,7 +58,6 @@ const renderCards = (data) =>
   data.map((repoEntry, i) => (
     <>
       <RepoCard>
-        username = {repoEntry.repoUsername} 
         language={repoEntry.repoLanguage}
         repoName={repoEntry.repoName}
         key={i}

@@ -29,7 +29,7 @@ const Form = () => {
         setError("Sorry, this user has no public repos");
       }
       const array = data.reverse().map((repo) => {
-        let username = repo.username;
+        let username = repo.owner.login;
         let repoName = repo.name;
         let url = repo.html_url;
         let forks = repo.forks;
@@ -57,6 +57,10 @@ const Form = () => {
 
   return (
     <div id="search-wrapper">
+      <h1 className="h1-spy">
+        We see you spying on {repos[0] && repos[0].username}
+      </h1>
+
       <form onSubmit={handleSubmit} aria-label="search">
         <input
           className="search-input"
