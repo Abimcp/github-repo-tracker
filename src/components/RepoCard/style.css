@@ -1,47 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
 
 #card {
-    border:solid rgb(226, 226, 226);
-    border-radius: 20px 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 20px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Raleway', sans-serif;
-    overflow: hidden;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 12px;
-    background-color: white;
+  border: solid rgb(226, 226, 226);
+  border-radius: 20px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Raleway", sans-serif;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 12px;
+  background-color: white;
 }
 
 h1 {
-font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-
-
 h1 a {
-    text-decoration: none;
-    color: black; 
+  text-decoration: none;
+  color: black;
 }
 
 h1 a:active {
-    color: brown
+  color: brown;
+}
+
+.repo-url:hover {
+  cursor: pointer;
 }
 
 #details {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: white;
 }
 
 #details i {
-    color: gold;
-    box-shadow: gray;
+  color: gold;
+  box-shadow: gray;
 }
 
-p, #card h1, #card a {
-    background-color: white;
+p,
+#card h1,
+#card a {
+  background-color: white;
 }

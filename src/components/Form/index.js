@@ -7,7 +7,7 @@ const Form = () => {
   const [user, setUser] = useState("");
   const [error, setError] = useState(null);
   const [repos, setRepos] = useContext(RepoContext);
-
+  const [data, setData] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchRepos(user);
@@ -36,8 +36,15 @@ const Form = () => {
         let watchers = repo.watchers;
         let language = repo.language;
         let stargazers = repo.stargazers_count;
-        return { repoName, url, forks, openIssues, watchers, language, stargazers };
-
+        return {
+          repoName,
+          url,
+          forks,
+          openIssues,
+          watchers,
+          language,
+          stargazers,
+        };
       });
       setRepos(array);
       console.log(array);

@@ -10,7 +10,7 @@ const Repos = () => {
         <RepoCard
           key={repo.repoName}
           repoName={repo.repoName}
-          link={repo.link}
+          url={repo.url}
           forks={repo.forks}
           openIssues={repo.openIssues}
           watchers={repo.watchers}
