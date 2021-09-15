@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import 'remixicon/fonts/remixicon.css'
 
 const RepoCard = ({ repoName, link, forks, openIssues, watchers, stargazers }) => {
   return (
@@ -12,7 +13,7 @@ const RepoCard = ({ repoName, link, forks, openIssues, watchers, stargazers }) =
         <p>Forks: {forks}</p>
         <p>Open Issues: {openIssues}</p>
         <p>Watchers: {watchers}</p>
-        <p>Stargazers: {stargazers}</p>
+        <p>Stargazers: <span><i className="ri-star-fill"></i></span>{stargazers}</p>
       </div>
     </div>
   );
