@@ -29,6 +29,7 @@ const Form = () => {
         setError("Sorry, this user has no public repos");
       }
       const array = data.reverse().map((repo) => {
+        let username = repo.username;
         let repoName = repo.name;
         let url = repo.html_url;
         let forks = repo.forks;
@@ -37,6 +38,7 @@ const Form = () => {
         let language = repo.language;
         let stargazers = repo.stargazers_count;
         return {
+          username,
           repoName,
           url,
           forks,
@@ -49,11 +51,7 @@ const Form = () => {
       setRepos(array);
       console.log(array);
     } catch (err) {
-      console.log(err);
-      if (data && data.status === 404) {
-        setError("That's not a valid Username");
-      }
-      throw new Error(err.message);
+      setError("That's not a valid Username");
     }
   };
 
@@ -71,6 +69,7 @@ const Form = () => {
         />
         <input className="search-btn" type="submit" value="Search" />
       </form>
+      <p>{error}</p>
     </div>
   );
 };

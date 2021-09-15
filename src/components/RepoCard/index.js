@@ -3,6 +3,7 @@ import "./style.css";
 import "remixicon/fonts/remixicon.css";
 
 const RepoCard = ({
+  username,
   repoName,
   url,
   forks,
@@ -14,7 +15,7 @@ const RepoCard = ({
   return (
     <div id="card">
       <h1>
-        {" "}
+        {username}
         <a className="repo-url" target="_blank" href={url}>
           {repoName}
         </a>

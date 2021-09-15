@@ -5,7 +5,7 @@ import LanguageCard from "../../components/LanguageCard";
 const Repo = () => {
   const [repos, setRepos] = useState([]);
   const [username, setUsername] = useState("");
-  const [error, setError] = useState(null);
+  const error = useSelector((state) => state.error);
 
   const updateUsername = (value) => {
     setUsername(value);
@@ -18,9 +18,10 @@ const Repo = () => {
         `https://api.github.com/users/${username}/repos`
       );
       if (!data.length) {
-        setError("Sorry, this user has no public repos");
+        error("Sorry, this user has no public repos");
       } else {
         const array = data.reverse().map((repo) => {
+          let username = repo.username;
           let repoName = repo.name;
           let url = repo.html_url;
           let forks = repo.forks;
@@ -29,6 +30,7 @@ const Repo = () => {
           let language = repo.language;
           let stargazers = repo.stargazers;
           return {
+            username,
             repoName,
             url,
             forks,
@@ -57,6 +59,7 @@ const renderCards = (data) =>
   data.map((repoEntry, i) => (
     <>
       <RepoCard>
+        username = {repoEntry.repoUsername} 
         language={repoEntry.repoLanguage}
         repoName={repoEntry.repoName}
         key={i}
@@ -72,7 +75,7 @@ const renderCards = (data) =>
 return (
   <>
     <Form updateUsername={updateUsername} />
-    {error ? <p id="error-msg">{error}</p> : renderCards(repos, language)}
+    {error ? <p id="error-msg">{error}</p> : renderCards(repos)}
   </>
 );
 
