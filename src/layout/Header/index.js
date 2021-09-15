@@ -5,7 +5,7 @@ import logo from "../../images/logo.png";
 const Header = () => {
   return (
     <>
-      <img src="../../images/logo.png" alt="Logo" />
+      <img src={logo} alt="Logo" />
       <h1>Welcome to your Repositories </h1>
     </>
   );

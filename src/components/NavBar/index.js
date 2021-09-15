@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { BackButton } from '../BackButton';
 import './style.css';
-import ''
 
 const NavBar = () => {
     
