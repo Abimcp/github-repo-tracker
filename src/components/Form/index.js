@@ -35,7 +35,15 @@ const Form = () => {
         let openIssues = repo.open_issues;
         let watchers = repo.watchers;
         let language = repo.language;
-        return { repoName, url, forks, openIssues, watchers, language };
+
+        return {
+          repoName,
+          url,
+          forks,
+          openIssues,
+          watchers,
+          language,
+        };
       });
       setRepos(array);
       console.log(array);
