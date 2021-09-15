@@ -57,10 +57,6 @@ const Form = () => {
 
   return (
     <div id="search-wrapper">
-      <h1 className="h1-spy">
-        We see you spying on {repos[0] && repos[0].username}
-      </h1>
-
       <form onSubmit={handleSubmit} aria-label="search">
         <input
           className="search-input"
@@ -73,6 +69,14 @@ const Form = () => {
         />
         <input className="search-btn" type="submit" value="Search" />
       </form>
+      {repos && repos[0] && (
+        <img
+          src={`https://github-readme-stats.vercel.app/api?username=${
+            repos[0] && repos[0].username
+          }
+        `}
+        />
+      )}
       <p>{error}</p>
     </div>
   );
