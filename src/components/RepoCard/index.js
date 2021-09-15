@@ -9,6 +9,7 @@ const RepoCard = ({
   openIssues,
   watchers,
   stargazers,
+  language,
 }) => {
   return (
     <div id="card">
@@ -18,6 +19,7 @@ const RepoCard = ({
           {repoName}
         </a>
       </h1>
+      <span className="language">{language}</span>
       <div id="details">
         <p>Forks: {forks}</p>
         <p>Open Issues: {openIssues}</p>

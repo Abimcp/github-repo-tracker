@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import LanguageCard from "../../components/LanguageCard";
 
 const Repo = () => {
   const [repos, setRepos] = useState([]);
@@ -27,7 +28,15 @@ const Repo = () => {
           let watchers = repo.watchers;
           let language = repo.language;
           let stargazers = repo.stargazers;
-          return { repoName, url, forks, openIssues, watchers, language, stargazers };
+          return {
+            repoName,
+            url,
+            forks,
+            openIssues,
+            watchers,
+            language,
+            stargazers,
+          };
         });
         setRepos(array);
       }
@@ -46,21 +55,24 @@ const Repo = () => {
 
 const renderCards = (data) =>
   data.map((repoEntry, i) => (
-    <RepoCard
-      repoName={repoEntry.repoName}
-      key={i}
-      link={repoEntry.url}
-      forks={repoEntry.forks}
-      openIssues={repoEntry.openIssues}
-      watchers={repoEntry.watchers}
-      stargazers={repoEntry.stargazers}
-    />
+    <>
+      <RepoCard>
+        language={repoEntry.repoLanguage}
+        repoName={repoEntry.repoName}
+        key={i}
+        link={repoEntry.url}
+        forks={repoEntry.forks}
+        openIssues={repoEntry.openIssues}
+        watchers={repoEntry.watchers}
+        stargazers={repoEntry.stargazers}
+      </RepoCard>
+    </>
   ));
 
 return (
   <>
     <Form updateUsername={updateUsername} />
-    {error ? <p id="error-msg">{error}</p> : renderCards(repos)}
+    {error ? <p id="error-msg">{error}</p> : renderCards(repos, language)}
   </>
 );
 
