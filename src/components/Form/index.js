@@ -37,6 +37,7 @@ const Form = () => {
         let language = repo.language;
         let stargazers = repo.stargazers_count;
         return { repoName, url, forks, openIssues, watchers, language, stargazers };
+
       });
       setRepos(array);
       console.log(array);
