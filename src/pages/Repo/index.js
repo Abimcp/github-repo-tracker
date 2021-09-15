@@ -54,6 +54,7 @@ const renderCards = (data) =>
       openIssues={repoEntry.openIssues}
       watchers={repoEntry.watchers}
       stargazers={repoEntry.stargazers}
+      language={repoEntry.language}
     />
   ));
 
