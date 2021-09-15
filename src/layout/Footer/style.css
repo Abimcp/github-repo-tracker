@@ -2,7 +2,7 @@
 
 #footer {
     width: 100vw;
-    position: relative;
+    position: fixed;
     bottom: 0;
     padding: 20px;
     font-family: 'Raleway', sans-serif;
